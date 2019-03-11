@@ -1,0 +1,5 @@
+---
+playbook:
+- Operation: HttpGet
+  Parameters:
+  - https://reqres.in/api/users/1

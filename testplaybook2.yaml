@@ -1,0 +1,35 @@
+---
+playbook:
+- Operation: DownloadFile
+  Parameters:
+  - https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe
+  - putty.exe
+- Operation: HttpGet
+  Parameters:
+  - https://reqres.in/api/users/2
+- Operation: HttpPost
+  Parameters:
+  - http://reqres.in/api/users
+  - "{\"name\":\"morpheus\",\"job\":\"leader\"}"
+- Operation: LaunchProcess
+  Parameters:
+  - C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+  - http://www.facebook.com http://www.yahoo.co.in
+- Operation: DeleteFile
+  Parameters:
+  - putty.exe
+- Operation: CreateKey
+  Parameters:
+  - HKCU
+  - QBASTest
+- Operation: SetKeyValue
+  Parameters:
+  - HKCU
+  - QBASTest
+  - TestKey
+  - DWORD
+  - 123
+- Operation: DeleteKey
+  Parameters:
+  - HKCU
+  - QBASTest
